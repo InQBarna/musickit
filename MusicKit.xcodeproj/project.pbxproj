@@ -126,11 +126,12 @@
 		4CD0D18A1EB39F0000C83AA2 /* MusicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 61402B291A08251D003AE7A7 /* MusicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0D1F11EB3B4C900C83AA2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0D1F01EB3B4C900C83AA2 /* ViewController.mm */; };
 		5E267F082703750600E2A14B /* MozartPianoSonata.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 5E267F072703750600E2A14B /* MozartPianoSonata.mxl */; };
-		5E267F0F2703763200E2A14B /* libSSZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E267F0E2703763200E2A14B /* libSSZipArchive.a */; };
 		5E3F52422704513B0021AC7D /* VMKScoreRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61D667801A3F67B80044A00B /* VMKScoreRenderer.mm */; };
 		5E3F5255270457000021AC7D /* BeetAnGeSample.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */; };
 		5E3F526C27045F160021AC7D /* VMKiOSScoreRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */; };
+		5E3F52D82704B3F00021AC7D /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3F52D72704B3F00021AC7D /* libSSZipArchive-iOS.a */; };
 		5E68BA4C2703780C004A7B08 /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */; };
+		603D614E262135198A43318E /* libPods-MusicKitTests-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E811129F298E6083144F1E /* libPods-MusicKitTests-iOS.a */; };
 		610A00021CE3B6AC002271A7 /* ClefSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFEC91CE3B6AC002271A7 /* ClefSequence.cpp */; };
 		610A00041CE3B6AC002271A7 /* DivisionsSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFECB1CE3B6AC002271A7 /* DivisionsSequence.cpp */; };
 		610A00061CE3B6AC002271A7 /* KeySequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFECD1CE3B6AC002271A7 /* KeySequence.cpp */; };
@@ -1133,6 +1134,7 @@
 		5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = BeetAnGeSample.mxl; sourceTree = "<group>"; };
 		5E3F526A27045F160021AC7D /* VMKiOSScoreRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMKiOSScoreRenderer.h; sourceTree = "<group>"; };
 		5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VMKiOSScoreRenderer.mm; sourceTree = "<group>"; };
+		5E3F52D72704B3F00021AC7D /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		610AFEC31CE3B6AC002271A7 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
 		610AFEC51CE3B6AC002271A7 /* AlterSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlterSequence.cpp; sourceTree = "<group>"; };
@@ -1806,8 +1808,11 @@
 		8CF686951AFB28AA00D112B8 /* OrnamentLayer-TrillBelow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow.png"; sourceTree = "<group>"; };
 		8CF686961AFB28AA00D112B8 /* OrnamentLayer-TrillBelow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow@2x.png"; sourceTree = "<group>"; };
 		8CF686971AFB28AA00D112B8 /* OrnamentLayer-TrillBelow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow@3x.png"; sourceTree = "<group>"; };
+		98190457E43D4E08274B49F8 /* Pods-MusicKitTests-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitTests-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitTests-iOS/Pods-MusicKitTests-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		A2E811129F298E6083144F1E /* libPods-MusicKitTests-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicKitTests-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitApp/Pods-MusicKitApp.release.xcconfig"; sourceTree = "<group>"; };
 		CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicKitApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E086CFDFFCACFAF793633D /* Pods-MusicKitTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitTests-iOS/Pods-MusicKitTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1826,9 +1831,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E267F0F2703763200E2A14B /* libSSZipArchive.a in Frameworks */,
+				5E3F52D82704B3F00021AC7D /* libSSZipArchive-iOS.a in Frameworks */,
 				610DC67A1A0832E700BEEBFD /* libxml2.dylib in Frameworks */,
 				610DC6731A08329A00BEEBFD /* MusicKit.framework in Frameworks */,
+				603D614E262135198A43318E /* libPods-MusicKitTests-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2799,6 +2805,7 @@
 		7BCBC8F925895208AAAC5413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E3F52D72704B3F00021AC7D /* libSSZipArchive-iOS.a */,
 				5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */,
 				5E267F102703763D00E2A14B /* libSSZipArchive.a */,
 				5E267F0E2703763200E2A14B /* libSSZipArchive.a */,
@@ -2811,6 +2818,7 @@
 				0054E8F61A72D7C8007FBC3E /* libPods-PreviewGenerator.a */,
 				04978BB939C5B560ED000B1B /* libPods-PreviewGenerator.a */,
 				CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */,
+				A2E811129F298E6083144F1E /* libPods-MusicKitTests-iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2822,6 +2830,8 @@
 				8C09E37C3547833316077DB3 /* Pods-PreviewGenerator.release.xcconfig */,
 				0D5E164DD9DB6D716D1F3B1F /* Pods-MusicKitApp.debug.xcconfig */,
 				B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */,
+				D8E086CFDFFCACFAF793633D /* Pods-MusicKitTests-iOS.debug.xcconfig */,
+				98190457E43D4E08274B49F8 /* Pods-MusicKitTests-iOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2949,6 +2959,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 610DC5C41A0831DF00BEEBFD /* Build configuration list for PBXNativeTarget "MusicKitTests-iOS" */;
 			buildPhases = (
+				C91E6C9840FAF55BDA911D15 /* [CP] Check Pods Manifest.lock */,
 				610DC5B51A0831DF00BEEBFD /* Sources */,
 				610DC5B61A0831DF00BEEBFD /* Frameworks */,
 				610DC5B71A0831DF00BEEBFD /* Resources */,
@@ -3695,6 +3706,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C91E6C9840FAF55BDA911D15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicKitTests-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA148D71D4E1E237009CCF02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4259,6 +4292,7 @@
 		};
 		610DC5C51A0831DF00BEEBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8E086CFDFFCACFAF793633D /* Pods-MusicKitTests-iOS.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4281,6 +4315,7 @@
 		};
 		610DC5C61A0831DF00BEEBFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98190457E43D4E08274B49F8 /* Pods-MusicKitTests-iOS.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
