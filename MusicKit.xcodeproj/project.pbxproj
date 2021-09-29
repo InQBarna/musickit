@@ -125,6 +125,12 @@
 		4CD0D17B1EB37D9F00C83AA2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD0D1791EB37D6800C83AA2 /* libxml2.2.dylib */; };
 		4CD0D18A1EB39F0000C83AA2 /* MusicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 61402B291A08251D003AE7A7 /* MusicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0D1F11EB3B4C900C83AA2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0D1F01EB3B4C900C83AA2 /* ViewController.mm */; };
+		5E267F082703750600E2A14B /* MozartPianoSonata.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 5E267F072703750600E2A14B /* MozartPianoSonata.mxl */; };
+		5E267F0F2703763200E2A14B /* libSSZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E267F0E2703763200E2A14B /* libSSZipArchive.a */; };
+		5E3F52422704513B0021AC7D /* VMKScoreRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61D667801A3F67B80044A00B /* VMKScoreRenderer.mm */; };
+		5E3F5255270457000021AC7D /* BeetAnGeSample.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */; };
+		5E3F526C27045F160021AC7D /* VMKiOSScoreRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */; };
+		5E68BA4C2703780C004A7B08 /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */; };
 		610A00021CE3B6AC002271A7 /* ClefSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFEC91CE3B6AC002271A7 /* ClefSequence.cpp */; };
 		610A00041CE3B6AC002271A7 /* DivisionsSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFECB1CE3B6AC002271A7 /* DivisionsSequence.cpp */; };
 		610A00061CE3B6AC002271A7 /* KeySequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFECD1CE3B6AC002271A7 /* KeySequence.cpp */; };
@@ -978,6 +984,7 @@
 		A9E5EBC01DAF47A800ACE913 /* VMKTieLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 616C1ABC1A0B054C0020EAA8 /* VMKTieLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9E5EBC11DAF47A800ACE913 /* VMKTimeSignatureLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 616C1AC01A0B06280020EAA8 /* VMKTimeSignatureLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9E5EBC21DAF47A800ACE913 /* VMKWedgeLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 616C1AC41A0BFE2C0020EAA8 /* VMKWedgeLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7D30290F4FD3FD4AD19C4B7 /* libPods-MusicKitApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */; };
 		F30D5B6DD23CB5B396B8293C /* libPods-PreviewGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04978BB939C5B560ED000B1B /* libPods-PreviewGenerator.a */; };
 /* End PBXBuildFile section */
 
@@ -1114,11 +1121,19 @@
 		00FC792E1ACB5C7A00C4261F /* TupletLayerFile-RepeatTuplets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TupletLayerFile-RepeatTuplets@2x.png"; sourceTree = "<group>"; };
 		00FC792F1ACB5C7A00C4261F /* TupletLayerFile-RepeatTuplets@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TupletLayerFile-RepeatTuplets@3x.png"; sourceTree = "<group>"; };
 		04978BB939C5B560ED000B1B /* libPods-PreviewGenerator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PreviewGenerator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5E164DD9DB6D716D1F3B1F /* Pods-MusicKitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitApp/Pods-MusicKitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		0F2BE49DBAEAA03A4A78F490 /* Pods-PreviewGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PreviewGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PreviewGenerator/Pods-PreviewGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD0D1771EB37CAA00C83AA2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		4CD0D1791EB37D6800C83AA2 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../usr/lib/libxml2.2.dylib; sourceTree = "<group>"; };
 		4CD0D1EF1EB3B4C900C83AA2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4CD0D1F01EB3B4C900C83AA2 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		5E267F072703750600E2A14B /* MozartPianoSonata.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = MozartPianoSonata.mxl; sourceTree = "<group>"; };
+		5E267F0E2703763200E2A14B /* libSSZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E267F102703763D00E2A14B /* libSSZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = BeetAnGeSample.mxl; sourceTree = "<group>"; };
+		5E3F526A27045F160021AC7D /* VMKiOSScoreRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMKiOSScoreRenderer.h; sourceTree = "<group>"; };
+		5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VMKiOSScoreRenderer.mm; sourceTree = "<group>"; };
+		5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		610AFEC31CE3B6AC002271A7 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
 		610AFEC51CE3B6AC002271A7 /* AlterSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlterSequence.cpp; sourceTree = "<group>"; };
 		610AFEC61CE3B6AC002271A7 /* AlterSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterSequence.h; sourceTree = "<group>"; };
@@ -1791,6 +1806,8 @@
 		8CF686951AFB28AA00D112B8 /* OrnamentLayer-TrillBelow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow.png"; sourceTree = "<group>"; };
 		8CF686961AFB28AA00D112B8 /* OrnamentLayer-TrillBelow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow@2x.png"; sourceTree = "<group>"; };
 		8CF686971AFB28AA00D112B8 /* OrnamentLayer-TrillBelow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow@3x.png"; sourceTree = "<group>"; };
+		B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitApp/Pods-MusicKitApp.release.xcconfig"; sourceTree = "<group>"; };
+		CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicKitApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1800,6 +1817,8 @@
 			files = (
 				4CD0D17B1EB37D9F00C83AA2 /* libxml2.2.dylib in Frameworks */,
 				4CC6AC391ECDE99500215733 /* MusicKit.framework in Frameworks */,
+				5E68BA4C2703780C004A7B08 /* libSSZipArchive-iOS.a in Frameworks */,
+				B7D30290F4FD3FD4AD19C4B7 /* libPods-MusicKitApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1807,6 +1826,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E267F0F2703763200E2A14B /* libSSZipArchive.a in Frameworks */,
 				610DC67A1A0832E700BEEBFD /* libxml2.dylib in Frameworks */,
 				610DC6731A08329A00BEEBFD /* MusicKit.framework in Frameworks */,
 			);
@@ -2229,6 +2249,10 @@
 				610DC5A81A0831DF00BEEBFD /* AppDelegate.m */,
 				4CD0D1EF1EB3B4C900C83AA2 /* ViewController.h */,
 				4CD0D1F01EB3B4C900C83AA2 /* ViewController.mm */,
+				5E3F526A27045F160021AC7D /* VMKiOSScoreRenderer.h */,
+				5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */,
+				5E267F072703750600E2A14B /* MozartPianoSonata.mxl */,
+				5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */,
 				610DC5AD1A0831DF00BEEBFD /* Main.storyboard */,
 				610DC5B21A0831DF00BEEBFD /* LaunchScreen.xib */,
 				610DC5A31A0831DF00BEEBFD /* Supporting Files */,
@@ -2775,6 +2799,9 @@
 		7BCBC8F925895208AAAC5413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */,
+				5E267F102703763D00E2A14B /* libSSZipArchive.a */,
+				5E267F0E2703763200E2A14B /* libSSZipArchive.a */,
 				4CD0D1791EB37D6800C83AA2 /* libxml2.2.dylib */,
 				4CD0D1771EB37CAA00C83AA2 /* libxml2.tbd */,
 				618C6C521A13DFC5008314B2 /* QuartzCore.framework */,
@@ -2783,6 +2810,7 @@
 				610DC5981A082FF000BEEBFD /* libxml2.dylib */,
 				0054E8F61A72D7C8007FBC3E /* libPods-PreviewGenerator.a */,
 				04978BB939C5B560ED000B1B /* libPods-PreviewGenerator.a */,
+				CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2792,6 +2820,8 @@
 			children = (
 				0F2BE49DBAEAA03A4A78F490 /* Pods-PreviewGenerator.debug.xcconfig */,
 				8C09E37C3547833316077DB3 /* Pods-PreviewGenerator.release.xcconfig */,
+				0D5E164DD9DB6D716D1F3B1F /* Pods-MusicKitApp.debug.xcconfig */,
+				B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2899,6 +2929,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 610DC5C11A0831DF00BEEBFD /* Build configuration list for PBXNativeTarget "MusicKitApp" */;
 			buildPhases = (
+				FA148D71D4E1E237009CCF02 /* [CP] Check Pods Manifest.lock */,
 				610DC59D1A0831DF00BEEBFD /* Sources */,
 				610DC59E1A0831DF00BEEBFD /* Frameworks */,
 				610DC59F1A0831DF00BEEBFD /* Resources */,
@@ -3013,8 +3044,6 @@
 				618C6C291A13DC76008314B2 /* Sources */,
 				618C6C2A1A13DC76008314B2 /* Frameworks */,
 				618C6C2B1A13DC76008314B2 /* Resources */,
-				0280D12C21D6E153F50242DB /* [CP] Embed Pods Frameworks */,
-				51FC021A592EAAAB95A0B151 /* [CP] Copy Pods Resources */,
 				610A01F01CE3C14C002271A7 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -3070,6 +3099,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -3096,6 +3126,8 @@
 			files = (
 				610DC5AF1A0831DF00BEEBFD /* Main.storyboard in Resources */,
 				359A4F0D2284F62B008E930E /* Symbols.xcassets in Resources */,
+				5E3F5255270457000021AC7D /* BeetAnGeSample.mxl in Resources */,
+				5E267F082703750600E2A14B /* MozartPianoSonata.mxl in Resources */,
 				610DC67E1A08342900BEEBFD /* Media.xcassets in Resources */,
 				610DC5B41A0831DF00BEEBFD /* LaunchScreen.xib in Resources */,
 			);
@@ -3645,49 +3677,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0280D12C21D6E153F50242DB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PreviewGenerator/Pods-PreviewGenerator-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		26D68DD40FEC07684C65733D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PreviewGenerator-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		51FC021A592EAAAB95A0B151 /* [CP] Copy Pods Resources */ = {
+		FA148D71D4E1E237009CCF02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicKitApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PreviewGenerator/Pods-PreviewGenerator-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3699,6 +3726,7 @@
 			files = (
 				4CD0D1F11EB3B4C900C83AA2 /* ViewController.mm in Sources */,
 				610DC5A91A0831DF00BEEBFD /* AppDelegate.m in Sources */,
+				5E3F526C27045F160021AC7D /* VMKiOSScoreRenderer.mm in Sources */,
 				610DC5A61A0831DF00BEEBFD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4077,6 +4105,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E3F52422704513B0021AC7D /* VMKScoreRenderer.mm in Sources */,
 				616C1D881A0D97490020EAA8 /* ViewController.m in Sources */,
 				616C1D851A0D97490020EAA8 /* main.m in Sources */,
 				616C1D831A0D97490020EAA8 /* AppDelegate.m in Sources */,
@@ -4175,6 +4204,7 @@
 /* Begin XCBuildConfiguration section */
 		610DC5C21A0831DF00BEEBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D5E164DD9DB6D716D1F3B1F /* Pods-MusicKitApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -4188,8 +4218,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
-					"$(SRCROOT)/Libraries",
-					"$(SRCROOT)",
+					"\"$(SRCROOT)/Pods/Headers/\"",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = MusicKitApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -4203,6 +4233,7 @@
 		};
 		610DC5C31A0831DF00BEEBFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -4210,6 +4241,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4577TKRJ5X;
 				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"\"$(SRCROOT)/Pods/Headers/\"",
+					"$(inherited)",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = MusicKitApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -4228,6 +4265,12 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/include/libxml2,
+					"$(SRCROOT)/Libraries",
+					"\"$(SRCROOT)/Pods/Headers/\"",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.venturemedia.$(PRODUCT_NAME:rfc1034identifier)";
@@ -4243,6 +4286,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/include/libxml2,
+					"$(SRCROOT)/Libraries",
+					"\"$(SRCROOT)/Pods/Headers/\"",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

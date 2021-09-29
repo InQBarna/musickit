@@ -95,7 +95,8 @@ std::unique_ptr<mxml::dom::Score> loadMXL(NSString* filePath) {
     NSArray* paths = [fileManager contentsOfDirectoryAtPath:destPath error:NULL];
     NSString* xmlFile = nil;
     for (NSString* file in paths) {
-        if ([file hasSuffix:@".xml"]) {
+        if ([file hasSuffix:@".xml"]
+            || [file hasSuffix:@".musicxml"]) {
             xmlFile = file;
             break;
         }
