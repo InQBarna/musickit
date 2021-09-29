@@ -130,6 +130,7 @@
 		5E3F5255270457000021AC7D /* BeetAnGeSample.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */; };
 		5E3F526C27045F160021AC7D /* VMKiOSScoreRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */; };
 		5E3F52D82704B3F00021AC7D /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3F52D72704B3F00021AC7D /* libSSZipArchive-iOS.a */; };
+		5E3F52F42704BA690021AC7D /* PageScoreViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F52F32704BA690021AC7D /* PageScoreViewController.mm */; };
 		5E68BA4C2703780C004A7B08 /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */; };
 		603D614E262135198A43318E /* libPods-MusicKitTests-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E811129F298E6083144F1E /* libPods-MusicKitTests-iOS.a */; };
 		610A00021CE3B6AC002271A7 /* ClefSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFEC91CE3B6AC002271A7 /* ClefSequence.cpp */; };
@@ -1135,6 +1136,8 @@
 		5E3F526A27045F160021AC7D /* VMKiOSScoreRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMKiOSScoreRenderer.h; sourceTree = "<group>"; };
 		5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VMKiOSScoreRenderer.mm; sourceTree = "<group>"; };
 		5E3F52D72704B3F00021AC7D /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3F52F22704BA690021AC7D /* PageScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageScoreViewController.h; sourceTree = "<group>"; };
+		5E3F52F32704BA690021AC7D /* PageScoreViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PageScoreViewController.mm; sourceTree = "<group>"; };
 		5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		610AFEC31CE3B6AC002271A7 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
 		610AFEC51CE3B6AC002271A7 /* AlterSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlterSequence.cpp; sourceTree = "<group>"; };
@@ -2255,6 +2258,8 @@
 				610DC5A81A0831DF00BEEBFD /* AppDelegate.m */,
 				4CD0D1EF1EB3B4C900C83AA2 /* ViewController.h */,
 				4CD0D1F01EB3B4C900C83AA2 /* ViewController.mm */,
+				5E3F52F22704BA690021AC7D /* PageScoreViewController.h */,
+				5E3F52F32704BA690021AC7D /* PageScoreViewController.mm */,
 				5E3F526A27045F160021AC7D /* VMKiOSScoreRenderer.h */,
 				5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */,
 				5E267F072703750600E2A14B /* MozartPianoSonata.mxl */,
@@ -3759,6 +3764,7 @@
 			files = (
 				4CD0D1F11EB3B4C900C83AA2 /* ViewController.mm in Sources */,
 				610DC5A91A0831DF00BEEBFD /* AppDelegate.m in Sources */,
+				5E3F52F42704BA690021AC7D /* PageScoreViewController.mm in Sources */,
 				5E3F526C27045F160021AC7D /* VMKiOSScoreRenderer.mm in Sources */,
 				610DC5A61A0831DF00BEEBFD /* main.m in Sources */,
 			);
@@ -4240,6 +4246,7 @@
 			baseConfigurationReference = 0D5E164DD9DB6D716D1F3B1F /* Pods-MusicKitApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -4260,7 +4267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.venturemedia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -4269,6 +4276,7 @@
 			baseConfigurationReference = B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -4286,7 +4294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.venturemedia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
