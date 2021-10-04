@@ -384,7 +384,6 @@
 		610DC5991A082FF000BEEBFD /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 610DC5981A082FF000BEEBFD /* libxml2.dylib */; };
 		610DC5A61A0831DF00BEEBFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 610DC5A51A0831DF00BEEBFD /* main.m */; };
 		610DC5A91A0831DF00BEEBFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 610DC5A81A0831DF00BEEBFD /* AppDelegate.m */; };
-		610DC5AF1A0831DF00BEEBFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610DC5AD1A0831DF00BEEBFD /* Main.storyboard */; };
 		610DC5B41A0831DF00BEEBFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610DC5B21A0831DF00BEEBFD /* LaunchScreen.xib */; };
 		610DC61F1A08322800BEEBFD /* VMKAdHocScoreTestCase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 610DC5CB1A08322800BEEBFD /* VMKAdHocScoreTestCase.mm */; };
 		610DC6681A08322800BEEBFD /* VMKClefLayerTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 610DC6151A08322800BEEBFD /* VMKClefLayerTests.mm */; };
@@ -986,6 +985,8 @@
 		A9E5EBC01DAF47A800ACE913 /* VMKTieLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 616C1ABC1A0B054C0020EAA8 /* VMKTieLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9E5EBC11DAF47A800ACE913 /* VMKTimeSignatureLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 616C1AC01A0B06280020EAA8 /* VMKTimeSignatureLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9E5EBC21DAF47A800ACE913 /* VMKWedgeLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 616C1AC41A0BFE2C0020EAA8 /* VMKWedgeLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC12A00C2707780900A4FE74 /* test.musicxml in Resources */ = {isa = PBXBuildFile; fileRef = AC12A00B2707780900A4FE74 /* test.musicxml */; };
+		AC8914A8270773AA002451FD /* MusicKitOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616C1ACD1A0C055E0020EAA8 /* MusicKitOSX.framework */; };
 		B7D30290F4FD3FD4AD19C4B7 /* libPods-MusicKitApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */; };
 		F30D5B6DD23CB5B396B8293C /* libPods-PreviewGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04978BB939C5B560ED000B1B /* libPods-PreviewGenerator.a */; };
 /* End PBXBuildFile section */
@@ -1453,7 +1454,6 @@
 		610DC5A51A0831DF00BEEBFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		610DC5A71A0831DF00BEEBFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		610DC5A81A0831DF00BEEBFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		610DC5AE1A0831DF00BEEBFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		610DC5B31A0831DF00BEEBFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		610DC5B91A0831DF00BEEBFD /* MusicKitTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MusicKitTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		610DC5BE1A0831DF00BEEBFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1813,6 +1813,7 @@
 		8CF686971AFB28AA00D112B8 /* OrnamentLayer-TrillBelow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OrnamentLayer-TrillBelow@3x.png"; sourceTree = "<group>"; };
 		98190457E43D4E08274B49F8 /* Pods-MusicKitTests-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitTests-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitTests-iOS/Pods-MusicKitTests-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A2E811129F298E6083144F1E /* libPods-MusicKitTests-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicKitTests-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC12A00B2707780900A4FE74 /* test.musicxml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.musicxml; sourceTree = "<group>"; };
 		B7C2447FC1E7FE55B199BF58 /* Pods-MusicKitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitApp/Pods-MusicKitApp.release.xcconfig"; sourceTree = "<group>"; };
 		CBBAD0D9334C466C756304E3 /* libPods-MusicKitApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicKitApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E086CFDFFCACFAF793633D /* Pods-MusicKitTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicKitTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicKitTests-iOS/Pods-MusicKitTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1861,6 +1862,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8914A8270773AA002451FD /* MusicKitOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2264,7 +2266,7 @@
 				5E3F526B27045F160021AC7D /* VMKiOSScoreRenderer.mm */,
 				5E267F072703750600E2A14B /* MozartPianoSonata.mxl */,
 				5E3F5254270457000021AC7D /* BeetAnGeSample.mxl */,
-				610DC5AD1A0831DF00BEEBFD /* Main.storyboard */,
+				AC12A00B2707780900A4FE74 /* test.musicxml */,
 				610DC5B21A0831DF00BEEBFD /* LaunchScreen.xib */,
 				610DC5A31A0831DF00BEEBFD /* Supporting Files */,
 				610DC67D1A08342900BEEBFD /* Media.xcassets */,
@@ -3140,10 +3142,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610DC5AF1A0831DF00BEEBFD /* Main.storyboard in Resources */,
 				359A4F0D2284F62B008E930E /* Symbols.xcassets in Resources */,
 				5E3F5255270457000021AC7D /* BeetAnGeSample.mxl in Resources */,
 				5E267F082703750600E2A14B /* MozartPianoSonata.mxl in Resources */,
+				AC12A00C2707780900A4FE74 /* test.musicxml in Resources */,
 				610DC67E1A08342900BEEBFD /* Media.xcassets in Resources */,
 				610DC5B41A0831DF00BEEBFD /* LaunchScreen.xib in Resources */,
 			);
@@ -4222,14 +4224,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		610DC5AD1A0831DF00BEEBFD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				610DC5AE1A0831DF00BEEBFD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		610DC5B21A0831DF00BEEBFD /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
