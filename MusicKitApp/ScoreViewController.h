@@ -1,5 +1,5 @@
 //
-//  PageScoreViewController.h
+//  ScoreViewController.h
 //  MusicKitApp
 //
 //  Created by Alexandros Katsaprakakis on 29/09/2021.
@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MusicKitApp-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PageScoreViewController : UIViewController
+@interface ScoreViewController : UIViewController<ScoreAudioPlayerDelegate>
 
 @end
 

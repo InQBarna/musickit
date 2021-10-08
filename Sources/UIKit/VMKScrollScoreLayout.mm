@@ -100,7 +100,7 @@ static const CGFloat VMCursorWidth = 16;
     if (!_scoreGeometry)
         return attributesArray;
 
-    const NSUInteger partCount = _scoreGeometry->geometries().size();
+    const NSUInteger partCount = 1; //_scoreGeometry->geometries().size();
     for (NSUInteger part = 0; part < partCount; part += 1) {
         const PartGeometry* partGeom = static_cast<const PartGeometry*>(_scoreGeometry->geometries().at(part).get());
 

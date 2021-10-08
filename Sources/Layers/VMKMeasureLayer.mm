@@ -153,7 +153,7 @@ const CGFloat VMKBarLineWidth = 1;
         NSMutableArray* array = _reusableElementViews[layer.class];
         if (!array) {
             array = [NSMutableArray array];
-            _reusableElementViews[layer.class] = array;
+            _reusableElementViews[(id<NSCopying>)layer.class] = array;
         }
         [array addObject:layer];
     }

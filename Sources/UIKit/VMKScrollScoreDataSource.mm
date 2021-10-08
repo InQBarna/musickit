@@ -56,7 +56,7 @@ using namespace mxml;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     if (!self.scoreGeometry)
         return 0;
-    return [NSIndexPath numberOfSectionsForPartCount:self.scoreGeometry->geometries().size()];
+    return [NSIndexPath numberOfSectionsForPartCount:1]; //self.scoreGeometry->geometries().size()];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

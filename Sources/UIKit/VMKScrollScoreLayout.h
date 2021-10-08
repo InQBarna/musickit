@@ -13,6 +13,7 @@
 
 - (NSArray*)noteTimeForPoint:(CGPoint)point withScale:(CGFloat)scale;
 - (CGPoint)pointForMeasureIndex:(int)measureIndex measureTime:(float)measureTime;
+- (UICollectionViewLayoutAttributes *)layoutAttributesForGeometry:(const mxml::Geometry*)geometry atIndexPath:(NSIndexPath *)indexPath;
 
 @property(nonatomic) const mxml::ScrollScoreGeometry* scoreGeometry;
 @property(nonatomic) CGFloat minHeight;
