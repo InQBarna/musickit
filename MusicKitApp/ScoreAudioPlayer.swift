@@ -12,6 +12,7 @@ import AVFAudio
 
 @objc protocol ScoreAudioPlayerDelegate: AnyObject {
     @objc func updatePlayPosition(measures: TimeInterval)
+    @objc func didEstimate(frequency: Double, measures: TimeInterval)
 }
 
 @objc class ScoreAudioPlayer: NSObject {
@@ -20,6 +21,8 @@ import AVFAudio
     private var sampler: Sampler1?
     private var scoreSequence = [ScoreSequenceItem]()
     private var musicTrack: MusicTrack?
+    
+    private lazy var pitchEstimation: PitchEstimationInterface = PitchEstimationFake()
     
     @objc weak var delegate: ScoreAudioPlayerDelegate?
     
@@ -163,10 +166,27 @@ import AVFAudio
     
     @objc func play() {
         sampler?.play()
+        
+        pitchEstimation.onPitchEstimated = { [weak self] freq in
+            guard let self = self,
+                  let sampler = self.sampler else { return }
+            
+            let interval = sampler.sequencer.currentPositionInSeconds
+            let measures =  interval * 0.125 * 2 * (self.bpm / 60)
+            self.delegate?.didEstimate(
+                frequency: freq,
+                measures: measures)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            self.pitchEstimation.start()
+        }
     }
     
     @objc func stop() {
         sampler?.stop()
+        
+        self.pitchEstimation.stop()
     }
     
     func getTrackLength(musicTrack:MusicTrack) -> MusicTimeStamp {
@@ -361,7 +381,6 @@ import AVFAudio
         sequencer.currentPositionInBeats = TimeInterval(0)
             
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
-            print("currentPos: \(self.sequencer.currentPositionInSeconds) secs")
             self.playPositionListening?(self.sequencer.currentPositionInSeconds)
         })
         

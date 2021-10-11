@@ -8,6 +8,7 @@ end
 target :MusicKitApp do 
     platform :ios, '9.0'
     pod "SSZipArchive"
+    pod 'Beethoven'
 end
 
 target :'MusicKitTests-iOS' do

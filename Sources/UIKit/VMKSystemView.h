@@ -6,11 +6,13 @@
 
 #import "VMKScoreElementContainerView.h"
 #include <mxml/geometry/SystemGeometry.h>
-
+#import "VMKMeasureLayer.h"
 
 @interface VMKSystemView : VMKScoreElementContainerView
 
 - (instancetype)initWithSystemGeometry:(const mxml::SystemGeometry*)systemGeometry;
+
+- (VMKMeasureLayer*)measureLayerAtIndex:(int)index;
 
 @property(nonatomic) const mxml::SystemGeometry* systemGeometry;
 @property(nonatomic, strong) NSArray* noteColors;

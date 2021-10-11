@@ -40,6 +40,29 @@
     return self;
 }
 
+- (VMKMeasureLayer*)measureLayerAtIndex:(int)index {
+    NSMutableArray *measureLayers = [NSMutableArray array];
+    
+    [self.systemLayer.sublayers.firstObject.sublayers enumerateObjectsUsingBlock:^(__kindof CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[VMKMeasureLayer class]]) {
+            [measureLayers addObject:obj];
+        }
+    }];
+    
+    [measureLayers sortUsingComparator:^NSComparisonResult(VMKMeasureLayer *obj1, VMKMeasureLayer *obj2) {
+        if (obj1.position.x < obj2.position.x) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedDescending;
+        }
+    }];
+    
+    if (measureLayers.count > index) {
+        return measureLayers[index];
+    }
+    return nil;
+}
+
 - (const mxml::SystemGeometry*)systemGeometry {
     return static_cast<const mxml::SystemGeometry*>(self.systemLayer.systemGeometry);
 }

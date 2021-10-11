@@ -6,7 +6,6 @@
 
 #import <UIKit/UIKit.h>
 #import "VMKCursorView.h"
-
 #include <mxml/geometry/PageScoreGeometry.h>
 
 @interface VMKPageScoreLayout : UICollectionViewLayout

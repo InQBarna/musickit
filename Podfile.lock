@@ -1,16 +1,24 @@
 PODS:
+  - Beethoven (5.0.0):
+    - Pitchy (~> 3.0)
+  - Pitchy (3.0.0)
   - SSZipArchive (0.3.2)
 
 DEPENDENCIES:
+  - Beethoven
   - SSZipArchive
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Beethoven
+    - Pitchy
     - SSZipArchive
 
 SPEC CHECKSUMS:
+  Beethoven: e318691697c38933a69081d4bf4d2506213505fd
+  Pitchy: 15407e4425b6d88fa3e7eef8927ba659fab52d7a
   SSZipArchive: 11801759495fa4efb7512ef652eb0042d68305d7
 
-PODFILE CHECKSUM: 6962de23daeaa45fb100a1e40a710813027bba9f
+PODFILE CHECKSUM: 4534262f76f362998d94d3f2a0014abc987708c0
 
-COCOAPODS: 1.11.1
+COCOAPODS: 1.11.2

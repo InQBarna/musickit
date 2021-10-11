@@ -41,6 +41,7 @@ const CGFloat VMKBarLineWidth = 1;
 @interface VMKMeasureLayer ()
 
 @property(nonatomic, strong) CATextLayer* numberLayer;
+@property(nonatomic, strong) NSMutableArray* estimationLayers;
 
 @end
 
@@ -59,7 +60,8 @@ const CGFloat VMKBarLineWidth = 1;
 
     _elementLayers = [[NSMutableArray alloc] init];
     _reusableElementViews = [[NSMutableDictionary alloc] init];
-
+    _estimationLayers = [[NSMutableArray alloc] init];
+    
     _numberLayer = [CATextLayer layer];
     _numberLayer.contentsScale = VMKScreenScale();
     _numberLayer.anchorPoint = CGPointMake(0, 1);
@@ -160,6 +162,14 @@ const CGFloat VMKBarLineWidth = 1;
     [_elementLayers removeAllObjects];
 
     _numberLayer.hidden = YES;
+    
+    for (CALayer *layer in self.estimationLayers) {
+        [layer removeFromSuperlayer];
+    }
+    [self.estimationLayers removeAllObjects];
+    
+    self.borderColor = [UIColor redColor].CGColor;
+    self.borderWidth = 0;
 }
 
 - (void)createElementViews {
@@ -309,6 +319,23 @@ const CGFloat VMKBarLineWidth = 1;
         lineRect.origin.y += Metrics::kStaffLineSpacing;
         CGContextFillRect(ctx, VMKRoundRect(lineRect));
     }
+}
+
+-(void)addEstimationAtProgressPct:(double)pct lowerStep:(mxml::dom::Pitch::Step)lowerStep lowerOctave:(int)lowerOctave higherStep:(mxml::dom::Pitch::Step)higherStep higherOctave:(int)higherOctave pctInBetween:(double)stepPct {
+    auto& metrics = self.measureGeometry->metrics();
+    
+    mxml::dom::tenths_t lowerY = metrics.staffYInGClef(lowerStep, lowerOctave);
+    mxml::dom::tenths_t higherY = metrics.staffYInGClef(higherStep, higherOctave);
+    float finalY = higherY + (lowerY - higherY) * abs(1-stepPct);
+    finalY = finalY * mxml::Metrics::kStaffLineSpacing / 10;
+    
+    
+    CALayer *layer = [[CALayer alloc] init];
+    layer.backgroundColor = UIColor.redColor.CGColor;
+    layer.frame = CGRectMake(self.bounds.size.width * pct, finalY - 1, 2, 2);
+    
+    [self addSublayer: layer];
+    [self.estimationLayers addObject:layer];
 }
 
 @end

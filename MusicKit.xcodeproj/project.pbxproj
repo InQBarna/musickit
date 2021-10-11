@@ -134,6 +134,8 @@
 		5E4D22D8270E3F5C009E6F34 /* ScoreAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4D22D7270E3F5C009E6F34 /* ScoreAudioPlayer.swift */; };
 		5E591EDE270C6D5D004828E9 /* test1Part.musicxml in Resources */ = {isa = PBXBuildFile; fileRef = 5E591EDD270C6D5C004828E9 /* test1Part.musicxml */; };
 		5E591EE8270C708A004828E9 /* VMKCustomScrollScoreLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E591EE7270C708A004828E9 /* VMKCustomScrollScoreLayout.mm */; };
+		5E5C2FF52714793000226A08 /* PitchEstimationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C2FF42714793000226A08 /* PitchEstimationInterface.swift */; };
+		5E5C2FF727147A1D00226A08 /* PitchEstimationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C2FF627147A1D00226A08 /* PitchEstimationFake.swift */; };
 		5E68BA4C2703780C004A7B08 /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */; };
 		5E8077D3270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077D2270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml */; };
 		5E8077D5270EF7AD00901E08 /* Violin.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077D4270EF7AD00901E08 /* Violin.sf2 */; };
@@ -144,6 +146,7 @@
 		5E8077E227109D1E00901E08 /* Gabe_s_Percussion_Box.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077DF27109D1D00901E08 /* Gabe_s_Percussion_Box.sf2 */; };
 		5E8077E327109D1E00901E08 /* HS African Percussion.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077E027109D1D00901E08 /* HS African Percussion.sf2 */; };
 		5E8077E427109D1E00901E08 /* HS Acoustic Percussion.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077E127109D1E00901E08 /* HS Acoustic Percussion.sf2 */; };
+		5E8077E62710A0BE00901E08 /* PitchEstimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8077E52710A0BE00901E08 /* PitchEstimation.swift */; };
 		603D614E262135198A43318E /* libPods-MusicKitTests-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E811129F298E6083144F1E /* libPods-MusicKitTests-iOS.a */; };
 		610A00021CE3B6AC002271A7 /* ClefSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFEC91CE3B6AC002271A7 /* ClefSequence.cpp */; };
 		610A00041CE3B6AC002271A7 /* DivisionsSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 610AFECB1CE3B6AC002271A7 /* DivisionsSequence.cpp */; };
@@ -1155,6 +1158,8 @@
 		5E591EDD270C6D5C004828E9 /* test1Part.musicxml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test1Part.musicxml; sourceTree = "<group>"; };
 		5E591EE6270C708A004828E9 /* VMKCustomScrollScoreLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMKCustomScrollScoreLayout.h; sourceTree = "<group>"; };
 		5E591EE7270C708A004828E9 /* VMKCustomScrollScoreLayout.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VMKCustomScrollScoreLayout.mm; sourceTree = "<group>"; };
+		5E5C2FF42714793000226A08 /* PitchEstimationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchEstimationInterface.swift; sourceTree = "<group>"; };
+		5E5C2FF627147A1D00226A08 /* PitchEstimationFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchEstimationFake.swift; sourceTree = "<group>"; };
 		5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8077D2270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TELMI_14 - Kreutzer_4.xml"; sourceTree = "<group>"; };
 		5E8077D4270EF7AD00901E08 /* Violin.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Violin.sf2; sourceTree = "<group>"; };
@@ -1166,6 +1171,7 @@
 		5E8077DF27109D1D00901E08 /* Gabe_s_Percussion_Box.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gabe_s_Percussion_Box.sf2; sourceTree = "<group>"; };
 		5E8077E027109D1D00901E08 /* HS African Percussion.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HS African Percussion.sf2"; sourceTree = "<group>"; };
 		5E8077E127109D1E00901E08 /* HS Acoustic Percussion.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HS Acoustic Percussion.sf2"; sourceTree = "<group>"; };
+		5E8077E52710A0BE00901E08 /* PitchEstimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchEstimation.swift; sourceTree = "<group>"; };
 		610AFEC31CE3B6AC002271A7 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
 		610AFEC51CE3B6AC002271A7 /* AlterSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlterSequence.cpp; sourceTree = "<group>"; };
 		610AFEC61CE3B6AC002271A7 /* AlterSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterSequence.h; sourceTree = "<group>"; };
@@ -2290,6 +2296,9 @@
 				5E4D22D4270DDEC2009E6F34 /* ScoreSequenceItem.m */,
 				5E4D22D7270E3F5C009E6F34 /* ScoreAudioPlayer.swift */,
 				5E8077D9270F027D00901E08 /* SwiftMIDI.swift */,
+				5E8077E52710A0BE00901E08 /* PitchEstimation.swift */,
+				5E5C2FF627147A1D00226A08 /* PitchEstimationFake.swift */,
+				5E5C2FF42714793000226A08 /* PitchEstimationInterface.swift */,
 				5E8077D6270EFCC000901E08 /* ScoreAudioInstrumentLoader.h */,
 				5E8077D7270EFCC000901E08 /* ScoreAudioInstrumentLoader.m */,
 				5E267F072703750600E2A14B /* MozartPianoSonata.mxl */,
@@ -3819,9 +3828,12 @@
 				5E8077DA270F027D00901E08 /* SwiftMIDI.swift in Sources */,
 				5E591EE8270C708A004828E9 /* VMKCustomScrollScoreLayout.mm in Sources */,
 				5E3F52F42704BA690021AC7D /* ScoreViewController.mm in Sources */,
+				5E5C2FF727147A1D00226A08 /* PitchEstimationFake.swift in Sources */,
 				5E4D22D8270E3F5C009E6F34 /* ScoreAudioPlayer.swift in Sources */,
+				5E8077E62710A0BE00901E08 /* PitchEstimation.swift in Sources */,
 				5E8077D8270EFCC000901E08 /* ScoreAudioInstrumentLoader.m in Sources */,
 				610DC5A61A0831DF00BEEBFD /* main.m in Sources */,
+				5E5C2FF52714793000226A08 /* PitchEstimationInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

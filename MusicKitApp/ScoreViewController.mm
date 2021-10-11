@@ -16,6 +16,7 @@
 #include "Part.h"
 #import "ScoreSequenceItem.h"
 #include "EventFactory.h"
+#import "VMKSystemView.h"
 
 @interface ScoreViewController ()
 
@@ -31,11 +32,6 @@
 @property  (nonatomic, strong) VMKPageScoreLayout* pageScoreLayout;
 @property (nonatomic, strong) VMKPageScoreDataSource* pageDataSource;
 
-@property  (nonatomic, strong) VMKScrollScoreLayout* scrollScoreLayout;
-@property (nonatomic, strong) VMKScrollScoreDataSource* scrollDataSource;
-
-@property  (nonatomic, strong) VMKCustomScrollScoreLayout* customScrollScoreLayout;
-
 @property (nonatomic, strong)  NSTimer *cursorTimer;
 
 @property (nonatomic, strong) NSMutableArray<ScoreSequenceItem*> *songSequence;
@@ -50,7 +46,6 @@
 
 std::unique_ptr<mxml::dom::Score> _score;
 std::unique_ptr<mxml::PageScoreGeometry> _geometry;
-std::unique_ptr<mxml::ScrollScoreGeometry> _scrollGeometry;
 std::unique_ptr<mxml::EventSequence> _sequence;
 
 - (void)viewDidLoad {
@@ -60,6 +55,10 @@ std::unique_ptr<mxml::EventSequence> _sequence;
     
     [self setupPlayer];
     [self setupView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     [self loadScore];
     [self loadAudio];
@@ -77,17 +76,6 @@ std::unique_ptr<mxml::EventSequence> _sequence;
     self.pageDataSource.cursorColor = [UIColor redColor];
     self.pageDataSource.cursorOpacity = 1;
 
-    self.scrollScoreLayout = [[VMKScrollScoreLayout alloc] init];
-    self.scrollScoreLayout.cursorStyle = VMKCursorStyleNote;
-    
-    self.customScrollScoreLayout = [[VMKCustomScrollScoreLayout alloc] initWithWidth:[UIScreen mainScreen].bounds.size.width - 32];
-    self.customScrollScoreLayout.cursorStyle = VMKCursorStyleNote;
-    
-    self.scrollDataSource = [[VMKScrollScoreDataSource alloc] init];
-    self.scrollDataSource.cursorStyle = VMKCursorStyleNote;
-    self.scrollDataSource.cursorColor = [UIColor redColor];
-    self.scrollDataSource.cursorOpacity = 0.6;
-    
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:self.pageScoreLayout];
     collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:collectionView];
@@ -252,12 +240,6 @@ std::unique_ptr<mxml::EventSequence> _sequence;
     [self.player configureMetronomeWithActive:switcher.isOn];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    self.customScrollScoreLayout.width = self.collectionView.bounds.size.width;
-}
-
 - (void)loadScore {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TELMI_14 - Kreutzer_4" ofType:@"xml"];
     if (path) {
@@ -266,19 +248,13 @@ std::unique_ptr<mxml::EventSequence> _sequence;
 
         if (!_score->parts().empty() && !_score->parts().front()->measures().empty()) {
             int lines = _score->parts().front()->measures().size() / self.metersPerLine;
-            _geometry.reset(new mxml::PageScoreGeometry(*_score, 700, 718, lines));
-            _scrollGeometry.reset(new mxml::ScrollScoreGeometry(*_score, true));
+            _geometry.reset(new mxml::PageScoreGeometry(*_score, self.collectionView.bounds.size.width - 50, self.collectionView.bounds.size.width, lines));
         } else {
             _geometry.reset();
-            _scrollGeometry.reset();
         }
 
         self.pageScoreLayout.scoreGeometry = _geometry.get();
         self.pageDataSource.scoreGeometry = _geometry.get();
-        self.scrollScoreLayout.scoreGeometry = _scrollGeometry.get();
-        self.scrollDataSource.scoreGeometry = _scrollGeometry.get();
-        self.customScrollScoreLayout.scoreGeometry = _scrollGeometry.get();
-        
         _sequence = _geometry->events();
         
         [self.collectionView reloadData];
@@ -363,6 +339,44 @@ std::unique_ptr<mxml::EventSequence> _sequence;
      wallTime += divisionDuration * static_cast<double>(event.absoluteTime() - time);
      time = event.absoluteTime();
      */
+}
+
+-(void)didEstimateWithFrequency:(double)frequency measures:(NSTimeInterval)measures {
+    NSInteger measureIndex = measures;
+//    auto& measure = _score->parts().front()->measures()[(int)measureIndex];
+//
+//    self.pageScoreLayout.cursorMeasureIndex = measureIndex;
+
+//    mxml::dom::time_t measureDivisions = _geometry->scoreProperties().divisionsPerMeasure(measureIndex);
+    
+    double measurePctFilled = measures - (double)measureIndex;
+    
+    NSInteger systemIndex = measureIndex / self.metersPerLine;
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:systemIndex inSection:VMKPageScoreSectionSystem]];
+    
+    __block VMKSystemView *systemView;
+    [cell.contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[VMKSystemView class]]) {
+            systemView = obj;
+            *stop = YES;
+        }
+    }];
+    
+    int systemMeasuresFilled = measureIndex % self.metersPerLine;
+//    double systemPctFilled = (1.0/(double)self.metersPerLine)*(measurePctFilled + (double)measuresFilled);
+    
+    if (systemView) {
+        VMKMeasureLayer *measureLayer = [systemView measureLayerAtIndex: systemMeasuresFilled];
+        measureLayer.borderColor = [UIColor redColor].CGColor;
+        measureLayer.borderWidth = 1;
+
+        [measureLayer addEstimationAtProgressPct:measurePctFilled
+                                       lowerStep:mxml::dom::Pitch::Step::E
+                                     lowerOctave:5
+                                      higherStep:mxml::dom::Pitch::Step::F
+                                    higherOctave:5
+                                    pctInBetween:0.0];
+    }
 }
 
 std::unique_ptr<mxml::dom::Score> loadMXLFile(NSString* filePath) {
