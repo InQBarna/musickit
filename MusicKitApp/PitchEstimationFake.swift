@@ -10,7 +10,7 @@ import Foundation
 
 class PitchEstimationFake: PitchEstimationInterface {
 
-    var onPitchEstimated: ((Double) -> Void)?
+    var onPitchEstimated: ((Double, String, Int) -> Void)?
     
     private var timer: Timer?
     
@@ -19,7 +19,7 @@ class PitchEstimationFake: PitchEstimationInterface {
             withTimeInterval: 0.05,
             repeats: true,
             block: { _ in
-                self.onPitchEstimated?(329.63)
+                self.onPitchEstimated?(329.63, "A", 4)
             })
     }
     

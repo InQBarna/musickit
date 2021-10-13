@@ -241,7 +241,7 @@ std::unique_ptr<mxml::EventSequence> _sequence;
 }
 
 - (void)loadScore {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"TELMI_14 - Kreutzer_4" ofType:@"xml"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Gossec Gavotte" ofType:@"xml"];
     if (path) {
 //        _score = loadMXLFile(path);
         _score= loadXML(path);
@@ -341,7 +341,7 @@ std::unique_ptr<mxml::EventSequence> _sequence;
      */
 }
 
--(void)didEstimateWithFrequency:(double)frequency measures:(NSTimeInterval)measures {
+-(void)didEstimateWithFrequency:(double)frequency noteLetter:(NSString * _Nonnull)noteLetter octave:(NSInteger)octave measures:(NSTimeInterval)measures {
     NSInteger measureIndex = measures;
 //    auto& measure = _score->parts().front()->measures()[(int)measureIndex];
 //
@@ -370,12 +370,78 @@ std::unique_ptr<mxml::EventSequence> _sequence;
         measureLayer.borderColor = [UIColor redColor].CGColor;
         measureLayer.borderWidth = 1;
 
+        auto range = _geometry->scoreProperties().measureRange(systemIndex);
+        
+        mxml::dom::time_t measureDivisions = _geometry->scoreProperties().divisionsPerMeasure(measureIndex);
+        double measureTime = (int)(measureDivisions * measurePctFilled);
+        auto span = _geometry->spans().closest(measureIndex, measureTime, typeid(mxml::dom::Note));
+        
+        float x = span->start() - _geometry->spans().origin(range.first) + span->eventOffset();
+        
+        if (systemMeasuresFilled > 0) {
+            x -= measureLayer.position.x;
+        }
+        
+        
+        NSLog(@"[ESTIMATION]: %f -- measure %ld", x, measureIndex);
+        
+        auto pitch = std::unique_ptr<mxml::dom::Pitch>(new mxml::dom::Pitch{});
+        auto nextPitch = std::unique_ptr<mxml::dom::Pitch>(new mxml::dom::Pitch{});
+        
+        pitch->setOctave(octave);
+        nextPitch->setOctave(octave);
+        
+        if ([noteLetter isEqualToString:@"C"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::C);
+            nextPitch->setStep(mxml::dom::Pitch::Step::D);
+        } else if ([noteLetter isEqualToString:@"C#"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::C);
+            pitch->setAlter(1);
+            nextPitch->setStep(mxml::dom::Pitch::Step::D);
+        } else if ([noteLetter isEqualToString:@"D"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::D);
+            nextPitch->setStep(mxml::dom::Pitch::Step::E);
+        } else if ([noteLetter isEqualToString:@"D#"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::D);
+            pitch->setAlter(1);
+            nextPitch->setStep(mxml::dom::Pitch::Step::E);
+        } else if ([noteLetter isEqualToString:@"E"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::E);
+            nextPitch->setStep(mxml::dom::Pitch::Step::F);
+        } else if ([noteLetter isEqualToString:@"F"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::F);
+            nextPitch->setStep(mxml::dom::Pitch::Step::G);
+        } else if ([noteLetter isEqualToString:@"F#"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::F);
+            pitch->setAlter(1);
+            nextPitch->setStep(mxml::dom::Pitch::Step::G);
+        } else if ([noteLetter isEqualToString:@"G"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::G);
+            nextPitch->setStep(mxml::dom::Pitch::Step::A);
+        } else if ([noteLetter isEqualToString:@"G#"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::G);
+            pitch->setAlter(1);
+            nextPitch->setStep(mxml::dom::Pitch::Step::A);
+        } else if ([noteLetter isEqualToString:@"A"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::A);
+            nextPitch->setStep(mxml::dom::Pitch::Step::B);
+        } else if ([noteLetter isEqualToString:@"A#"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::A);
+            pitch->setAlter(1);
+            nextPitch->setStep(mxml::dom::Pitch::Step::B);
+        } else if ([noteLetter isEqualToString:@"B"]) {
+            pitch->setStep(mxml::dom::Pitch::Step::B);
+            nextPitch->setStep(mxml::dom::Pitch::Step::C);
+            nextPitch->setOctave(octave+1);
+        }
+        
         [measureLayer addEstimationAtProgressPct:measurePctFilled
-                                       lowerStep:mxml::dom::Pitch::Step::E
-                                     lowerOctave:5
-                                      higherStep:mxml::dom::Pitch::Step::F
-                                    higherOctave:5
-                                    pctInBetween:0.0];
+                                       lowerStep:pitch->step()
+                                     lowerOctave:pitch->octave()
+                                      higherStep:nextPitch->step()
+                                    higherOctave:nextPitch->octave()
+                                    pctInBetween:0.0
+                                    closestNoteX:x];
     }
 }
 

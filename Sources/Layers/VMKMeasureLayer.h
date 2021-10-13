@@ -14,7 +14,7 @@ extern const CGFloat VMKBarLineWidth;
 @interface VMKMeasureLayer : VMKScoreElementLayer
 
 - (instancetype)initWithMeasure:(const mxml::MeasureGeometry*)measureGeom;
-- (void)addEstimationAtProgressPct:(double)pct lowerStep:(mxml::dom::Pitch::Step)lowerStep lowerOctave:(int)lowerOctave higherStep:(mxml::dom::Pitch::Step)higherStep higherOctave:(int)higherOctave pctInBetween:(double)stepPct;
+- (void)addEstimationAtProgressPct:(double)pct lowerStep:(mxml::dom::Pitch::Step)lowerStep lowerOctave:(int)lowerOctave higherStep:(mxml::dom::Pitch::Step)higherStep higherOctave:(int)higherOctave pctInBetween:(double)stepPct closestNoteX: (CGFloat)closestNoteX;
 
 @property(nonatomic) const mxml::MeasureGeometry* measureGeometry;
 @property(nonatomic, strong) NSArray<VMKColor *>* noteColors;

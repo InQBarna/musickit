@@ -12,7 +12,7 @@ import AVFAudio
 
 @objc protocol ScoreAudioPlayerDelegate: AnyObject {
     @objc func updatePlayPosition(measures: TimeInterval)
-    @objc func didEstimate(frequency: Double, measures: TimeInterval)
+    @objc func didEstimate(frequency: Double, noteLetter: String, octave: Int, measures: TimeInterval)
 }
 
 @objc class ScoreAudioPlayer: NSObject {
@@ -22,11 +22,11 @@ import AVFAudio
     private var scoreSequence = [ScoreSequenceItem]()
     private var musicTrack: MusicTrack?
     
-    private lazy var pitchEstimation: PitchEstimationInterface = PitchEstimationFake()
+    private lazy var pitchEstimation: PitchEstimationInterface = PitchEstimation() //PitchEstimationFake()
     
     @objc weak var delegate: ScoreAudioPlayerDelegate?
     
-    @objc var bpm: Double = 90
+    @objc var bpm: Double = 60
     
     private var playMetronomeOnly: Bool = false
     
@@ -167,7 +167,7 @@ import AVFAudio
     @objc func play() {
         sampler?.play()
         
-        pitchEstimation.onPitchEstimated = { [weak self] freq in
+        pitchEstimation.onPitchEstimated = { [weak self] freq, noteLetter, octave in
             guard let self = self,
                   let sampler = self.sampler else { return }
             
@@ -175,6 +175,8 @@ import AVFAudio
             let measures =  interval * 0.125 * 2 * (self.bpm / 60)
             self.delegate?.didEstimate(
                 frequency: freq,
+                noteLetter: noteLetter,
+                octave: octave,
                 measures: measures)
         }
         

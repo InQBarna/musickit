@@ -321,7 +321,7 @@ const CGFloat VMKBarLineWidth = 1;
     }
 }
 
--(void)addEstimationAtProgressPct:(double)pct lowerStep:(mxml::dom::Pitch::Step)lowerStep lowerOctave:(int)lowerOctave higherStep:(mxml::dom::Pitch::Step)higherStep higherOctave:(int)higherOctave pctInBetween:(double)stepPct {
+-(void)addEstimationAtProgressPct:(double)pct lowerStep:(mxml::dom::Pitch::Step)lowerStep lowerOctave:(int)lowerOctave higherStep:(mxml::dom::Pitch::Step)higherStep higherOctave:(int)higherOctave pctInBetween:(double)stepPct closestNoteX: (CGFloat)closestNoteX {
     auto& metrics = self.measureGeometry->metrics();
     
     mxml::dom::tenths_t lowerY = metrics.staffYInGClef(lowerStep, lowerOctave);
@@ -329,10 +329,26 @@ const CGFloat VMKBarLineWidth = 1;
     float finalY = higherY + (lowerY - higherY) * abs(1-stepPct);
     finalY = finalY * mxml::Metrics::kStaffLineSpacing / 10;
     
+    //  spancollection:  const_iterator closest(std::size_t measureIndex, dom::time_t time, const std::type_info& type) const;
+
     
     CALayer *layer = [[CALayer alloc] init];
     layer.backgroundColor = UIColor.redColor.CGColor;
-    layer.frame = CGRectMake(self.bounds.size.width * pct, finalY - 1, 2, 2);
+
+    // Continuous estimation drawings
+    __block CGFloat ineffectiveWidth = 0;
+    [_elementLayers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[VMKClefLayer class]]) {
+            ineffectiveWidth = ((VMKClefLayer*)obj).frame.size.width;
+            if (idx == 0) {
+                ineffectiveWidth += ((VMKClefLayer*)obj).frame.origin.x;
+            }
+        }
+    }];
+    layer.frame = CGRectMake(ineffectiveWidth + (self.bounds.size.width - ineffectiveWidth) * pct, finalY - 1, 2, 2);
+
+    // Pin to closest note
+    //    layer.frame = CGRectMake(closestNoteX, finalY - 4, 8, 8);
     
     [self addSublayer: layer];
     [self.estimationLayers addObject:layer];

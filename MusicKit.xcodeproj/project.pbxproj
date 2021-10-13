@@ -136,6 +136,7 @@
 		5E591EE8270C708A004828E9 /* VMKCustomScrollScoreLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E591EE7270C708A004828E9 /* VMKCustomScrollScoreLayout.mm */; };
 		5E5C2FF52714793000226A08 /* PitchEstimationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C2FF42714793000226A08 /* PitchEstimationInterface.swift */; };
 		5E5C2FF727147A1D00226A08 /* PitchEstimationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C2FF627147A1D00226A08 /* PitchEstimationFake.swift */; };
+		5E5C2FF92716E32C00226A08 /* Gossec Gavotte.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E5C2FF82716E32C00226A08 /* Gossec Gavotte.xml */; };
 		5E68BA4C2703780C004A7B08 /* libSSZipArchive-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */; };
 		5E8077D3270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077D2270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml */; };
 		5E8077D5270EF7AD00901E08 /* Violin.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5E8077D4270EF7AD00901E08 /* Violin.sf2 */; };
@@ -1160,6 +1161,7 @@
 		5E591EE7270C708A004828E9 /* VMKCustomScrollScoreLayout.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VMKCustomScrollScoreLayout.mm; sourceTree = "<group>"; };
 		5E5C2FF42714793000226A08 /* PitchEstimationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchEstimationInterface.swift; sourceTree = "<group>"; };
 		5E5C2FF627147A1D00226A08 /* PitchEstimationFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchEstimationFake.swift; sourceTree = "<group>"; };
+		5E5C2FF82716E32C00226A08 /* Gossec Gavotte.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Gossec Gavotte.xml"; sourceTree = "<group>"; };
 		5E68BA4B2703780C004A7B08 /* libSSZipArchive-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libSSZipArchive-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8077D2270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TELMI_14 - Kreutzer_4.xml"; sourceTree = "<group>"; };
 		5E8077D4270EF7AD00901E08 /* Violin.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Violin.sf2; sourceTree = "<group>"; };
@@ -2308,6 +2310,7 @@
 				5E8077D2270EE27E00901E08 /* TELMI_14 - Kreutzer_4.xml */,
 				5E8077DD270F3D3900901E08 /* Vivaldi_Concerto_in_A_minor_RV_356-Violin_Soloist.xml */,
 				5E4D22D1270DAE37009E6F34 /* Gavotte.xml */,
+				5E5C2FF82716E32C00226A08 /* Gossec Gavotte.xml */,
 				5E8077DB270F366900901E08 /* andre-sonatine.mid */,
 				5E8077D4270EF7AD00901E08 /* Violin.sf2 */,
 				5E8077DF27109D1D00901E08 /* Gabe_s_Percussion_Box.sf2 */,
@@ -3207,6 +3210,7 @@
 				5E8077DE270F3D3900901E08 /* Vivaldi_Concerto_in_A_minor_RV_356-Violin_Soloist.xml in Resources */,
 				5E8077E227109D1E00901E08 /* Gabe_s_Percussion_Box.sf2 in Resources */,
 				5E8077E427109D1E00901E08 /* HS Acoustic Percussion.sf2 in Resources */,
+				5E5C2FF92716E32C00226A08 /* Gossec Gavotte.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

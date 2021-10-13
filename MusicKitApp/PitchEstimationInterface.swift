@@ -12,5 +12,5 @@ protocol PitchEstimationInterface {
     func start()
     func stop()
     
-    var onPitchEstimated: ((Double) -> Void)? { get set }
+    var onPitchEstimated: ((Double, String, Int) -> Void)? { get set }
 }

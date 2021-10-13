@@ -12,13 +12,13 @@ import Pitchy
 
 class PitchEstimation: PitchEstimationInterface {
     lazy var pitchEngine: PitchEngine = { [weak self] in
-      let config = Config(bufferSize: 2048 * 2, estimationStrategy: .yin)
+      let config = Config(bufferSize: 1024, estimationStrategy: .yin)
       let pitchEngine = PitchEngine(config: config, delegate: self)
       pitchEngine.levelThreshold = -30.0
       return pitchEngine
     }()
     
-    var onPitchEstimated: ((Double) -> Void)?
+    var onPitchEstimated: ((Double, String, Int) -> Void)?
 
     public func start() {
         pitchEngine.start()
@@ -32,7 +32,7 @@ class PitchEstimation: PitchEstimationInterface {
 extension PitchEstimation: PitchEngineDelegate   {
     func pitchEngine(_ pitchEngine: PitchEngine, didReceivePitch pitch: Pitch) {
         print("[PITCH]: pitch = \(pitch.frequency) --> estimNote : \(pitch.note.letter)\(pitch.note.octave)")
-        onPitchEstimated?(pitch.frequency)
+        onPitchEstimated?(pitch.frequency, pitch.note.letter.rawValue, pitch.note.octave + 1)
     }
     
     func pitchEngine(_ pitchEngine: PitchEngine, didReceiveError error: Error) {
